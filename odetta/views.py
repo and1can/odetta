@@ -19,7 +19,7 @@ import StringIO
 import numpy as np
 from odetta.odetta_wrappers import oplot_process
 
- #from simple_chi2 import *
+#from simple_chi2 import *
 
 
 def home_page(request):
