@@ -16,9 +16,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': 'odetta',                      # Or path to database file if using sqlite3.
         'USER': 'odetta_user',                      # Not used with sqlite3.
-        'PASSWORD': 'xxxx',                  # Not used with sqlite3.
-        # 'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'HOST': 'scidb1.nersc.gov',
+        'PASSWORD': 'mrs13ume',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
+        # 'HOST': 'scidb1.nersc.gov',
         'PORT': '5432',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -63,13 +63,15 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/html/site_media/odetta/'
+#STATIC_ROOT = '/var/www/html/site_media/odetta/'
+STATIC_ROOT = '/odetta/static/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/site_media/odetta/'
+#STATIC_URL = '/site_media/odetta/'
+STATIC_URL = '/odetta/static/'
 
-FORCE_SCRIPT_NAME = '/odetta'
+#FORCE_SCRIPT_NAME = '/odetta'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
@@ -77,7 +79,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     # os.path.join(os.path.dirname(__file__),'media')
-    PROJECT_DIR + 'static',
+    PROJECT_DIR+'static',
 )
 
 

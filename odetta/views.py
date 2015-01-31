@@ -193,6 +193,7 @@ def plot(request, model_id):
 
 
 def get_plot_data(request, model_id, time_step=0, mu_step=0, phi_step=0):
+    print("get_plot_data")
     spectra = Spectra.objects.filter(model_id=model_id)
     if spectra.count() <= 0:
         raise Http404
@@ -241,6 +242,7 @@ def get_plot_data(request, model_id, time_step=0, mu_step=0, phi_step=0):
 
 
 def batch_time_data(request, model_id, mu_step, phi_step):
+    print("batch_time_data")
     model = Spectra.objects.filter(model_id=model_id)
 
     if model.count() <= 0:
@@ -279,6 +281,7 @@ def batch_time_data(request, model_id, mu_step, phi_step):
 
 
 def batch_mu_data(request, model_id, time_step, phi_step):
+    print("batch_mu_data")
     model = Spectra.objects.filter(model_id=model_id)
 
     if model.count() <= 0:
@@ -483,10 +486,12 @@ def get_zip_file(request):
     return response
     
 def upload(request, model_id):
+    print("upload")
     return render_to_response("upload.html", {"model_id":model_id}, context_instance=RequestContext(request))
 
 
 def ajax_overplot(request, model_id):
+    print("ajax_overplot")
     flux_data = oplot_process(file=None, model_id=model_id)
     data = {
         "flux_data": flux_data,

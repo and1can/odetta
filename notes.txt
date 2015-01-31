@@ -1,0 +1,19 @@
+
+on command line:
+
+export DJANGO_SETTINGS_MODULE=odetta.settings
+
+in python:
+
+import odetta.models as m
+
+# this is how to get db info on ONE row in a table
+spec1 = m.Spectra.objects.get(spec_id=1)
+
+# this is how to get db info on MULTIPLE rows in a table
+data = m.Spectra.objects.filter(spec_id__lt=5)
+
+# you don't have permission to do this, but this is how to change db info
+spec1.t_expl = 321.9
+spec1.save()
+
