@@ -1,6 +1,5 @@
 import os.path
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..')) + "/"
-print(PROJECT_DIR)
 # Django settings for odetta project.
 
 DEBUG = True
@@ -64,13 +63,13 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = '/var/www/html/site_media/odetta/' #change if want to upload things (folder to upload)
+STATIC_ROOT = '/var/www/html/site_media/odetta/'
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
 STATIC_URL = '/site_media/odetta/'
 
-#FORCE_SCRIPT_NAME = '/odetta' # uncomment when on NERSC
+#FORCE_SCRIPT_NAME = '/odetta'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
