@@ -23,7 +23,14 @@ from odetta.odetta_wrappers import oplot_process
 
 
 def home_page(request):
-    return render_to_response('base.html', context_instance=RequestContext(request))
+   # obtain context from HTTP request
+   context = RequestContext(request)
+   # query database for ALL categories currently stored
+   # retrieve top 4 only
+   category_list = Category.objects.order_by(' -likes')[:3]
+   context_dict = {'categories' : category_list} 
+   # place in list and then send to templates
+   return render_to_response('base.html', context_dict, context)
 
 
 def browse(request, pub_id=None):

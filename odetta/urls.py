@@ -44,4 +44,5 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^browse/$', browse),
     url(r'^browse/models/(?P<pub_id>\d+)/$', browse),
+    url(r'^rango/', include('rango.urls')), # ADDED NEW TUPLE!
 )

@@ -12,6 +12,7 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
@@ -116,10 +117,11 @@ ROOT_URLCONF = 'odetta.urls'
 WSGI_APPLICATION = 'odetta.wsgi.application'
 
 TEMPLATE_DIRS = (
-    PROJECT_DIR + "templates/"
+    PROJECT_DIR + "templates/",
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    'odetta/rango/templates/',
 )
 
 INSTALLED_APPS = (
@@ -133,6 +135,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'rango',
 )
 
 # A sample logging configuration. The only tangible logging
